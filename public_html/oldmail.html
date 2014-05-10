@@ -31,7 +31,8 @@
                 <li><a href="#">User Menu</a>
                         <ul class="sub_menu">
                             <li><a href="UserMail.html">Show My Mail</a></li>
-                                 <li><a href="MailStats.html">Mail Statistics</a></li>
+                                 <li><a href="#">Show Activity</a></li>
+                                 <li><a href="#">Show Outstanding</a></li>
                                  <li><a href="#">Settings</a></li>
                         </ul>
                 </li>
@@ -65,93 +66,84 @@
 	</div>
     <!--MENU BAR SECTION **END**-->
     
-    <!--CONTENT SECTION **BEGIN** -->
+        
+        
+<div id='ChartDiv' style='width:750px;height:400px;'></div>
+    <script type="text/javascript" language="javascript">
+    var chart1 = new cfx.Chart();
+   
+    chart1.setGallery(cfx.Gallery.Bar);
+    populatechart(chart1);
+    var titles = chart1.getTitles();
+    var title = new cfx.TitleDockable();
+    title.setText("Most Counted Words");
+    titles.add(title);    
+    chart1.create('ChartDiv');
+
+function populatechart(chart1) {
+        
+        
+        var json = (function () {
+            var json = null;
+            $.ajax({
+                'async': false,
+                'global': false,
+                'url': 'JSON/wordweight.json',
+                'dataType': "json",
+                'success': function (data) {
+                    json = data;
+                }
+            });
+            return json;
+        })();
+        chart1.setDataSource(json);
+    }
+       
+      
+
+</script>
+
+    <!--CONTENT SECTION -->
 <div id="UserMailContent">
     <br />
     <br />
     
     <br />
-    
-    
-    <h2 id="subject_title">Subject: <select id="select_subject">
-        <option value="0" >Choose a Subject to Display</option>
-    </select>
-    
-    </h2>
+    <h1 id="user_name_head1"></h1>
     <p id="user_msg_sent">Messages Sent: </p>
-    <p id="sent_date">Date Sent: </p>
-    <p id="mail_list">Mailing List: </p>
-    <p id="mail_author">Author: </p>
-    <p id="thread">Thread: </p>
+    <p id="user_msg_recieved">Messages Received: </p>
 </div>
     
-    <!--CONTENT SECTION **END** -->  
     
     <!-- 
         RELEVANT
-
-        A Line graph showing the total number of threads in a given month in a selected mailing list.
-            A line or bar graph for displaying other stats for a given mailing list such as
-                    In a given time period (need to consult with the client). The dashboard should display.
-                    Total number of threads
-                    Total number of messages
-                    Total number of messages from the user
-                    Maximum number of messages on a thread
-                    Average number of messages on a thread
-    Two Pie Graphs will also be added (One for mail threads and one for mail messages) for user participation (only users who have contributed will be noted in the graph) it will compare user activity in a given period of time (For example in a given month there were 20 threads and foo was the creator of 5, and bar created 3. The graph would show this as well as the other users who created a thread and the amount they created. Foo would be shown with 25% for the month). The other type will be for messages in the given period of time for a user’s messages sent in comparison to the rest of the network.
-
+        Messages: The total number of messages sent
+	Subject: The title of the email chain
+	Date: The time the message was sent
+	Mailing List: The category of the mail
+	Author: The sender of the message
+        Thread: Grouping emails by the original message
+    
+    
     -->
 
+<!-- CONTENT SCRIPTING -->
+    
+    <script type="text/javascript">
+    
+    $('#user_select').change(function(){
+       var selected = $('#user_select').val();
+       var user_name = "user1";
+       var msg_sent = 5;
+       var msg_recieved = 5;
+        $("#user_name_head1").text(user_name + "'s mail");
+        $("#user_msg_sent").text("Messages Sent: " + msg_sent);
+        $("#user_msg_recieved").text("Messages Received: " + msg_recieved);
+    });
     
     
     
-    
-    
-    
-    
-  
-<script type="text/javascript">
-    
-    /*Get Data Into Array Code:ZZZ */
-    var select = document.getElementById("select_subject");
-    //var options = ["1", "2", "3", "4", "5"];
-    var options = [["Mail1","5","11/07/12","List1","Author1","Thread1"],
-                   ["Mail2","10","12/07/12","List2","Author2","Thread2"],
-                   ["Mail3","15","13/07/12","List3","Author3","Thread3"]];
-               
-    for(var i = 0; i < options.length; i++) {
-        var opt = options[i][0];
-        var el = document.createElement("option");
-        el.textContent = opt;
-        el.value = i;
-        select.appendChild(el);
-    }
-
-     $('#select_subject').change(function(){
-        var selector = $('#select_subject option:selected').val();
-        selector = parseInt(selector);
-        $("#user_msg_sent").text(selector);
-        
-        for(var i = 0; i < options.length; i++) { 
-                if(selector == i){
-                var m_amt = options[i][1];
-                var m_date = options[i][2];
-                var m_list = options[i][3];
-                var m_auth = options[i][4];
-                var m_thread= options[i][5];
-                           
-                $("#user_msg_sent").text("Messages Sent: " + m_amt);
-                $("#sent_date").text("Date Sent: " + m_date);
-                $("#mail_list").text("Mailing List: " + m_list);
-                $("#mail_author").text("Author: " + m_auth);
-                $("#thread").text("Thread: " + m_thread);
-                
-                }
-            }
-            
-        }
-    );
-</script>
+   </script>
 
 </body>
 
