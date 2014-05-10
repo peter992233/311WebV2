@@ -1,0 +1,148 @@
+*{ 
+    margin: 0; padding: 0; 
+}
+body{
+    font: 14px Helvetica, Sans-Serif;
+    width: 100%;
+    background-color: whitesmoke;
+} 
+#page-wrap{ 
+    width: 800px; 
+    margin: 25px auto; 
+} 
+a{ 
+    text-decoration: none; 
+}
+ul{ 
+    list-style: none; 
+}
+p{
+    margin: 15px 0; 
+}
+
+/* List Indent 1 */
+ul.dropdown { 
+    position: relative;  
+}
+
+ul.dropdown li { 
+    font-weight: bold; 
+    float: left; 
+    zoom: 1; 
+    background: grey; /* Old browsers */
+    background: -moz-linear-gradient(top,
+      lightgrey 0%, grey 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, 
+      left top, left bottom, color-stop(0%,lightgrey),
+      color-stop(100%,grey)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  
+      lightgrey 0%,grey 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  
+      lightgrey 0%,grey 100%); /* Opera 11.10+ */
+    background: -o-linear-gradient(to bottom,  
+      lightgrey 0%,grey 100%); /* W3C standard, IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+      startColorstr='lightgrey', 
+      endColorstr='grey',GradientType=0 ); /* IE6-9 */
+}
+ul.dropdown a:hover{ 
+    background: #b0ca34; /* Old browsers */
+    background: -moz-linear-gradient(top,  
+      #b0ca34 0%, #96c40d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, 
+      color-stop(0%,#b0ca34), 
+      color-stop(100%,#96c40d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  
+      #b0ca34 0%,#96c40d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  
+      #b0ca34 0%,#96c40d 100%); /* Opera 11.10+ */
+    background: -o-linear-gradient(to bottom,  
+      #b0ca34 0%,#96c40d 100%); /* W3C standard, IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( 
+      startColorstr='#b0ca34', 
+      endColorstr='#96c40d',GradientType=0 ); /* IE6-9 */ 
+}
+ul.dropdown a:active{ 
+    color: #96c40d;
+}
+ul.dropdown li a{ 
+    display: block; 
+    padding: 4px 8px;
+    border-right: 1px solid #333;
+    color: #222;
+}
+ul.dropdown li:last-child a{
+    border-right: none; 
+}
+ul.dropdown li.hover,ul.dropdown li:hover{
+    background: #96c40d; 
+    color: black; 
+    position: relative; 
+}
+ul.dropdown li.hover a{ 
+    color: black;
+}
+
+
+/* List Indent 2 */
+ul.dropdown ul{ 
+    width: 220px; 
+    visibility: hidden; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+}
+ul.dropdown ul li{ 
+    font-weight: normal; 
+    background: lightgrey; 
+    color: #000; 
+    border-bottom: 1px solid #ccc; 
+    float: none; 
+}									
+ul.dropdown ul li a{ 
+    border-right: none;
+    width: 100%; 
+    display: inline-block;
+} 
+
+/* List Indent 3 */
+ul.dropdown ul ul{ 
+    left: 100%; 
+    top: 0; 
+}
+ul.dropdown li:hover > ul {
+    visibility: visible; 
+}
+
+#logindiv{ 
+    width: 800px; 
+    margin: 25px auto; 
+}
+#logoutdiv{ 
+    width: 800px; 
+    margin: 25px auto; 
+} 
+
+#indexcontent{
+   width: 800px; 
+   margin: 25px auto; 
+    
+}
+
+#UserMailContent{
+   width: 800px; 
+   margin: 25px auto; 
+    
+}
+
+#ChartDiv{
+   width:600px;
+   height:400px;
+   margin: 25px auto;
+}
+
+#testzone{
+   width:600px;
+   height:400px;
+   margin: 25px auto;
+}

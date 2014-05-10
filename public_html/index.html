@@ -1,0 +1,31 @@
+<html>
+    
+<head>
+<title> Login page </title>
+</head>
+
+<body>
+<h1>Log In To The Dashboard</h1>
+    
+    
+<form name="login">
+    Username<input type="text" name="userid" value="U"/>
+    Password<input type="password" name="pswrd" value="P"/>
+    <input type="button" onclick="check(this.form)" value="Login"/>
+    <input type="reset" value="Cancel"/>
+</form>
+    
+<script>
+function check(form)
+{
+    if(form.userid.value === "U" && form.pswrd.value === "P"){
+       window.close();
+       window.open('LoggedIn.html');}
+    else{
+      alert("Error Password or Username");
+    }
+}
+</script>
+
+</body>
+</html>

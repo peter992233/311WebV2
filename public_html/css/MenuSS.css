@@ -1,0 +1,85 @@
+/* Give the body a width */
+body {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto; 
+  background-color:#666666;
+}
+
+/* Make the nav take up the whole body width, and give it some top and bottom margin space */
+nav {
+  width: 100%;
+  margin: 20px 0; }
+
+/* Make the list of links take up the whole width of the nav */
+nav ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+nav ul li {
+  width: 20%; 
+  float: left;}
+
+
+/*Nav Menu Style old col = #cdeb8e*/
+nav ul li a {
+  text-align: center;
+  padding: 8px 0;
+  display: block;
+  width: 100%;
+  background: grey; /* Old browsers */
+  background: -moz-linear-gradient(top,
+    lightgrey 0%, grey 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, 
+    left top, left bottom, color-stop(0%,lightgrey),
+    color-stop(100%,grey)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  
+    lightgrey 0%,grey 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  
+    lightgrey 0%,grey 100%); /* Opera 11.10+ */
+  background: -o-linear-gradient(to bottom,  
+    lightgrey 0%,grey 100%); /* W3C standard, IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( 
+    startColorstr='lightgrey', 
+    endColorstr='grey',GradientType=0 ); /* IE6-9 */
+}
+
+/*Hover Effect*/
+nav ul li a:hover {
+  background: #b0ca34; /* Old browsers */
+  background: -moz-linear-gradient(top,  
+    #b0ca34 0%, #96c40d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,#b0ca34), 
+    color-stop(100%,#96c40d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  
+    #b0ca34 0%,#96c40d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  
+    #b0ca34 0%,#96c40d 100%); /* Opera 11.10+ */
+  background: -o-linear-gradient(to bottom,  
+    #b0ca34 0%,#96c40d 100%); /* W3C standard, IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( 
+    startColorstr='#b0ca34', 
+    endColorstr='#96c40d',GradientType=0 ); /* IE6-9 */
+  }
+  
+  /*makes sure links dont go purple once used or selected*/
+  nav ul li a:active {
+  color: #000;
+  text-decoration: none; } 
+  nav ul li a:visited {
+  color: #000;
+  text-decoration: none; }
+  
+  
+ /* Rounds the corners of the first and last elements in the nav bar*/
+nav ul li:first-child a {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+nav ul li:last-child a {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
