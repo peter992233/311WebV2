@@ -1,0 +1,13 @@
+[{
+        "Subject": "Mail1",
+        "MsgCount": "5",
+        "List": "List1",
+        "Author": "Author1",
+        "Thread": "Thread1"
+    }, {
+        "Subject": "Mail2",
+        "MsgCount": "10",
+        "List": "List2",
+        "Author": "Author2",
+        "Thread": "Thread2"
+    }]
