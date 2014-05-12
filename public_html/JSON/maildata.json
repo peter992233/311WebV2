@@ -1,12 +1,14 @@
 [{
         "Subject": "Mail1",
         "MsgCount": "5",
+        "Date": "17/10/12",
         "List": "List1",
         "Author": "Author1",
         "Thread": "Thread1"
     }, {
         "Subject": "Mail2",
         "MsgCount": "10",
+        "Date": "18/10/12",
         "List": "List2",
         "Author": "Author2",
         "Thread": "Thread2"
