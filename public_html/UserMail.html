@@ -15,14 +15,13 @@
           
         <!-- JChartFX scripts -->
         <link href="js/JChartFX/styles/jchartfx.css" rel="stylesheet" type="text/css"/>
-        <script src="js/JChartFX/js/jchartfx.coreVector.js" type="text/javascript"></script>
         <script src="js/JChartFX/js/jchartfx.system.js" type="text/javascript"></script>
         <script src="js/JChartFX/js/jchartfx.coreBasic.js" type="text/javascript"></script>
         <script src="js/JChartFX/js/jchartfx.advanced.js" type="text/javascript"></script>
 </head>
 
 <!--Line to initialize chart on page Load  -->
-<body onload="loadChart()">  
+<body>  
 
     <!--MENU BAR SECTION -->
 	<div id="page-wrap">
@@ -85,68 +84,44 @@
     <p id="thread">Thread: </p>
 </div>
     
-    <!--CONTENT SECTION **END** -->  
-    
-    <!-- 
-        RELEVANT
-
-        A Line graph showing the total number of threads in a given month in a selected mailing list.
-            A line or bar graph for displaying other stats for a given mailing list such as
-                    In a given time period (need to consult with the client). The dashboard should display.
-                    Total number of threads
-                    Total number of messages
-                    Total number of messages from the user
-                    Maximum number of messages on a thread
-                    Average number of messages on a thread
-    Two Pie Graphs will also be added (One for mail threads and one for mail messages) for user participation (only users who have contributed will be noted in the graph) it will compare user activity in a given period of time (For example in a given month there were 20 threads and foo was the creator of 5, and bar created 3. The graph would show this as well as the other users who created a thread and the amount they created. Foo would be shown with 25% for the month). The other type will be for messages in the given period of time for a user’s messages sent in comparison to the rest of the network.
-
-    -->
-
-    
-    
-    
-    
-    
-    
-    
   
 <script type="text/javascript">
+    var jarray = [];
     
-    /*Get Data Into Array Code:ZZZ Issue: Importing*/
-    var select = document.getElementById("select_subject");
-    //var options = ["1", "2", "3", "4", "5"];
-    var options = [["Mail1","5","11/07/12","List1","Author1","Thread1"],
-                   ["Mail2","10","12/07/12","List2","Author2","Thread2"],
-                   ["Mail3","15","13/07/12","List3","Author3","Thread3"]];
-               
-
-               
-    for(var i = 0; i < options.length; i++) {
-        var opt = options[i][0];
-        var el = document.createElement("option");
-        el.textContent = opt;
-        el.value = i;
-        select.appendChild(el);
-    }
-
+    $.getJSON('JSON/maildata.json', function (json) {
+        var i = 0;    
+        var select = document.getElementById("select_subject");
+        for (var key in json) {
+            if (json.hasOwnProperty(key)) {
+                var item = json[key];
+                jarray.push({
+                    Subject: item.Subject,
+                    MsgCount: item.MsgCount,
+                    Date: item.Date,
+                    List: item.List,
+                    Author: item.Author,
+                    Thread: item.Thread});
+                    var el = document.createElement("option");
+                    el.textContent = item.Subject;
+                    el.value = i;
+                    select.appendChild(el);
+                    i += 1;
+            }
+        }
+    });
+    
      $('#select_subject').change(function(){
         var selector = $('#select_subject option:selected').val();
         selector = parseInt(selector);
         $("#user_msg_sent").text(selector);
         
-        for(var i = 0; i < options.length; i++) { 
-                if(selector == i){
-                var m_amt = options[i][1];
-                var m_date = options[i][2];
-                var m_list = options[i][3];
-                var m_auth = options[i][4];
-                var m_thread= options[i][5];
-                           
-                $("#user_msg_sent").text("Messages Sent: " + m_amt);
-                $("#sent_date").text("Date Sent: " + m_date);
-                $("#mail_list").text("Mailing List: " + m_list);
-                $("#mail_author").text("Author: " + m_auth);
-                $("#thread").text("Thread: " + m_thread);
+        for(var i = 0; i < jarray.length; i++) { 
+                if(selector == i){          
+                $("#user_msg_sent").text("Messages Sent: " + jarray[i].MsgCount);
+                $("#sent_date").text("Date Sent: " + jarray[i].Date);
+                $("#mail_list").text("Mailing List: " + jarray[i].List);
+                $("#mail_author").text("Author: " + jarray[i].Author);
+                $("#thread").text("Thread: " + jarray[i].Thread);
                 
                 }
             }
