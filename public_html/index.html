@@ -1,31 +1,18 @@
-<html>
-    
-<head>
-<title> Login page </title>
-</head>
-
-<body>
-<h1>Log In To The Dashboard</h1>
-    
-    
-<form name="login">
-    Username<input type="text" name="userid" value="U"/>
-    Password<input type="password" name="pswrd" value="P"/>
-    <input type="button" onclick="check(this.form)" value="Login"/>
-    <input type="reset" value="Cancel"/>
-</form>
-    
-<script>
-function check(form)
-{
-    if(form.userid.value === "U" && form.pswrd.value === "P"){
-       window.close();
-       window.open('LoggedIn.html');}
-    else{
-      alert("Error Password or Username");
-    }
-}
-</script>
-
-</body>
-</html>
+<!DOCTYPE HTML> <html> 
+    <head> 
+        <title>Sign-In</title>
+        <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+    </head> 
+    <body id="body-color"> 
+        <div id="Sign-In"> 
+            <fieldset style="width:30%">
+                <legend>LOG-IN HERE</legend> 
+                    User <br> <input type="text" name="user" size="40"> <br> 
+                    Password <br> <input type="password" name="pass" size="40"><br> 
+                    <form action="LoggedIn.html">
+                    <input type="submit" value="Submit">
+                </form>
+            </fieldset> 
+        </div> 
+    </body> 
+</html> 
