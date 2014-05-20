@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<title>Dashboard System</title>
+	
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection"/>
+	<script type="text/javascript" src="js/DDownJS/jquery-1.3.1.min.js"></script>	
+	<script type="text/javascript" language="javascript" src="js/DDownJS/jquery.dropdownPlain.js"></script>
+</head>
+
+<body>
+
+	<!--MENU BAR SECTION -->
+	<div id="page-wrap">
+            <ul class="dropdown">
+                <li><a href="LoggedIn.html">Home</a></li>
+                <li><a href="#">User Menu</a>
+                        <ul class="sub_menu">
+                            <li><a href="UserMail.html">Show My Mail</a></li>
+                                 <li><a href="MailStats.html">Mail Statistics</a></li>
+                                 <li><a href="AddMail.html">Add a New Mail</a></li>
+                        </ul>
+                </li>
+                <li><a href="#">Bug Statistics</a>
+                        <ul class="sub_menu">
+                                 <li><a href="#">Total Bugs</a></li>
+                                 <li><a href="#">Bugs Per Month</a></li>
+                                 <li><a href="#">Resolved vs Unresolved</a></li>
+                                 <li><a href="#">Summary</a></li>
+                        </ul>
+                </li>
+                <li><a href="#">Mail Statistics</a>
+                        <ul class="sub_menu">
+                                 <li><a href="#">Total Mail</a></li>
+                                 <li><a href="#">Mail By User</a></li>
+                                 <li><a href="#">Find A Correspondence</a></li>
+                                 <li><a href="#">Summary</a></li>
+                        </ul>
+                </li>
+                 <li><a href="#">Data Actions</a>
+                        <ul class="sub_menu">
+                                 <li><a href="#">Add a Bug</a></li>
+                                 <li><a href="#">Add Mail</a></li>
+                                 <li><a href="#">Import to Table</a></li>
+                                 <li><a href="#">Export to Table</a></li>
+                        </ul>
+                </li>
+                
+                    
+            </ul>
+	</div>
+    <!--MENU BAR SECTION **END**-->
+        
+    <!--CONTENT SECTION **BEGIN**-->
+    <script type="text/javascript">
+    $.getJSON('JSON/maildata.json', function (data) {
+        alert(data[1].Subject);
+        data.push({
+        "Subject": "Mail3",
+        "MsgCount": "15",
+        "Date": "20/10/12",
+        "List": "List3",
+        "Author": "Author3"});
+    });
+</script>
+    <!--CONTENT SECTION **END**-->
+    </body>
+</html>

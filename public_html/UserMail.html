@@ -31,7 +31,7 @@
                         <ul class="sub_menu">
                             <li><a href="UserMail.html">Show My Mail</a></li>
                                  <li><a href="MailStats.html">Mail Statistics</a></li>
-                                 <li><a href="#">Settings</a></li>
+                                 <li><a href="MailSummary.html">Data Summary</a></li>
                         </ul>
                 </li>
                 <li><a href="#">Bug Statistics</a>
@@ -68,26 +68,24 @@
 <div id="UserMailContent">
     <br />
     <br />
+    <br />    
     
-    <br />
-    
-    
-    <h2 id="subject_title">Subject: <select id="select_subject">
+    <h2 id="subject_title">Subject: 
+        <select id="select_subject">
         <option value="0" >Choose a Subject to Display</option>
     </select>
-    
     </h2>
+    <p id="subject_display">Subject: </p>
     <p id="user_msg_sent">Messages Sent: </p>
-    <p id="sent_date">Date Sent: </p>
-    <p id="mail_list">Mailing List: </p>
     <p id="mail_author">Author: </p>
-    <p id="thread">Thread: </p>
+    <p id="mail_date">Date: </p>
 </div>
     
   
 <script type="text/javascript">
     var jarray = [];
     
+    //Change to ajax request Code:ZZZZ Item: Importing
     $.getJSON('JSON/maildata.json', function (json) {
         var i = 0;    
         var select = document.getElementById("select_subject");
@@ -97,10 +95,8 @@
                 jarray.push({
                     Subject: item.Subject,
                     MsgCount: item.MsgCount,
-                    Date: item.Date,
-                    List: item.List,
                     Author: item.Author,
-                    Thread: item.Thread});
+                    Date: item.Date});
                     var el = document.createElement("option");
                     el.textContent = item.Subject;
                     el.value = i;
@@ -117,12 +113,10 @@
         
         for(var i = 0; i < jarray.length; i++) { 
                 if(selector == i){          
+                $("#subject_display").text("Subject: " + jarray[i].Subject);
                 $("#user_msg_sent").text("Messages Sent: " + jarray[i].MsgCount);
-                $("#sent_date").text("Date Sent: " + jarray[i].Date);
-                $("#mail_list").text("Mailing List: " + jarray[i].List);
                 $("#mail_author").text("Author: " + jarray[i].Author);
-                $("#thread").text("Thread: " + jarray[i].Thread);
-                
+                $("#mail_date").text("Date: " + jarray[i].Date);
                 }
             }
             

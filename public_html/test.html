@@ -106,7 +106,7 @@
     //$("#num_threads").text("Total number of threads: " + totalthreads);
     
    var chart1 = new cfx.Chart();
-    chart1.setGallery(cfx.Gallery.Lines);
+    chart1.setGallery(cfx.Gallery.Bar);
     populatethreadchart(chart1);
     var titles = chart1.getTitles();
     var title = new cfx.TitleDockable();
@@ -114,43 +114,13 @@
     titles.add(title);    
     chart1.create('new_thread_chart');
     
-    var chart2 = new cfx.Chart();
-    PopulateCarProduction(chart2);
-    chart2.setGallery(cfx.Gallery.Pie);
-    var data = chart2.getData();
-    data.setPoints(5);
-    data.setSeries(1);
-    var titles = chart2.getTitles();
-    var title = new cfx.TitleDockable();
-    title.setText("Messages Sent By User (1999)");
-    titles.add(title);
-    chart2.getAllSeries().getPointLabels().setVisible(true);
-    chart2.create('msg_count_1999');
-
-function PopulateCarProduction(chart2) {
-     var json = (function () {
-            var json = null;
-            $.ajax({
-                'async': false,
-                'global': false,
-                'url': 'JSON/messagecount1999.json',
-                'dataType': "json",
-                'success': function (data) {
-                    json = data;
-                }
-            });
-            return json;
-        })();
-        chart2.setDataSource(json);
-}
-
 function populatethreadchart(chart1) {      
         var json = (function () {
             var json = null;
             $.ajax({
                 'async': false,
                 'global': false,
-                'url': 'JSON/newthreads.json',
+                'url': 'JSON/newestthreads.json',
                 'dataType': "json",
                 'success': function (data) {
                     json = data;
