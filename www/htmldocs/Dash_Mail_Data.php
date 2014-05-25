@@ -131,59 +131,6 @@
             </table>
           </div>
 		  
-		  
-		<div name="Charts">
-			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		    <script type="text/javascript">
-		    google.load("visualization", "1", {packages:["corechart"]});
-			google.setOnLoadCallback(drawChart);
-			function drawChart() {
-				var data = google.visualization.arrayToDataTable([
-				  ['Year', 'Sent', 'Recieved'],
-				  ['1999',  1000,      400],
-				  ['2000',  1170,      460],
-				  ['2001',  660,       1120],
-				  ['2002',  1030,      540]
-				]);
-
-				var options = {
-				  title: 'Mail Sent/Recieved By Year',
-				  hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-				};
-
-				var chart = new google.visualization.ColumnChart(document.getElementById('mail_over_time_chart'));
-				chart.draw(data, options);
-			  }
-			  
-			  
-			google.load("visualization", "1", {packages:["corechart"]});
-			google.setOnLoadCallback(drawChart2);
-			function drawChart2() {
-				var data2 = google.visualization.arrayToDataTable([
-				  ['Year', 'Sent', 'Recieved'],
-				  ['1999',  1111,      400],
-				  ['2000',  1170,      460],
-				  ['2001',  660,       1120],
-				  ['2002',  1030,      540]
-				]);
-
-				var options2 = {
-				  title: 'Average Sent/Recieved By Year',
-				  hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-				};
-
-				var chart2 = new google.visualization.ColumnChart(document.getElementById('avg_over_time_chart'));
-				chart2.draw(data2, options2);
-			  }
-			</script>
-			<div id="mail_over_time_chart" style="width: 900px; height: 500px;"></div>
-			<div id="avg_over_time_chart" style="width: 900px; height: 500px;"></div>
-		  </div>
-		  
-        </div>
-      </div>
-    </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

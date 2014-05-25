@@ -104,7 +104,7 @@
 		    google.load("visualization", "1", {packages:["corechart"]});
 			google.setOnLoadCallback(drawChart);
 			function drawChart() {
-				var set1_data = google.visualization.arrayToDataTable([
+				var data = google.visualization.arrayToDataTable([
 				  ['Year', 'Sent', 'Recieved'],
 				  ['1999',  1000,      400],
 				  ['2000',  1170,      460],
@@ -118,14 +118,14 @@
 				};
 
 				var chart = new google.visualization.ColumnChart(document.getElementById('mail_over_time_chart'));
-				chart.draw(set1_data, options);
+				chart.draw(data, options);
 			  }
 			  
 			  
 			google.load("visualization", "1", {packages:["corechart"]});
 			google.setOnLoadCallback(drawChart2);
 			function drawChart2() {
-				var set2_data = google.visualization.arrayToDataTable([
+				var data2 = google.visualization.arrayToDataTable([
 				  ['Year', 'Sent', 'Recieved'],
 				  ['1999',  1111,      400],
 				  ['2000',  1170,      460],
@@ -139,12 +139,107 @@
 				};
 
 				var chart2 = new google.visualization.ColumnChart(document.getElementById('avg_over_time_chart'));
-				chart2.draw(set2_data, options2);
+				chart2.draw(data2, options2);
 			  }
 			</script>
 			<div id="mail_over_time_chart" style="width: 900px; height: 500px;"></div>
 			<div id="avg_over_time_chart" style="width: 900px; height: 500px;"></div>
 		  </div>
+		    <!--==================Pre Scripts For Query Wrapper==================-->  
+		<!--Load the AJAX API-->
+		<!-- JChartFX scripts -->
+        <link href="js/styles/jchartfx.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jchartfx.system.js" type="text/javascript"></script>
+        <script src="js/jchartfx.coreBasic.js" type="text/javascript"></script>
+        <script src="js/jchartfx.advanced.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<br/><br/>
+		<div id='new_thread_chart' style='width:700px;height:400px;'></div>
+		<br/><br/>
+		<div id='msg_count_1999' style='width:700px;height:400px;'></div>
+
+	   
+	<script type="text/javascript">
+		var tarray = [];
+		$.getJSON('json/newthreads.json', function (json) {  
+			for (var key in json) {
+				if (json.hasOwnProperty(key)) {
+					var item = json[key];
+					tarray.push({
+						year2013: item.year2013,
+						year2012: item.year2012,
+						year2011: item.year2011,
+						year2010: item.year2010,
+						Month: item.Month});
+				}
+			}
+		});
+		
+	</script>
+		
+	<!-- Chart Scripting -->
+	<script type="text/javascript">
+		  
+		//$("#num_threads").text("Total number of threads: " + totalthreads);
+		
+	   var chart1 = new cfx.Chart();
+		chart1.setGallery(cfx.Gallery.Lines);
+		populatethreadchart(chart1);
+		var titles = chart1.getTitles();
+		var title = new cfx.TitleDockable();
+		title.setText("New Threads");
+		titles.add(title);    
+		chart1.create('new_thread_chart');
+		
+		var chart2 = new cfx.Chart();
+		PopulateCarProduction(chart2);
+		chart2.setGallery(cfx.Gallery.Pie);
+		var data = chart2.getData();
+		data.setPoints(5);
+		data.setSeries(1);
+		var titles = chart2.getTitles();
+		var title = new cfx.TitleDockable();
+		title.setText("Messages Sent By User (1999)");
+		titles.add(title);
+		chart2.getAllSeries().getPointLabels().setVisible(true);
+		chart2.create('msg_count_1999');
+
+	function PopulateCarProduction(chart2) {
+		 var json = (function () {
+				var json = null;
+				$.ajax({
+					'async': false,
+					'global': false,
+					'url': 'json/messagecount1999.json',
+					'dataType': "json",
+					'success': function (data) {
+						json = data;
+					}
+				});
+				return json;
+			})();
+			chart2.setDataSource(json);
+	}
+
+	function populatethreadchart(chart1) {      
+			var json = (function () {
+				var json = null;
+				$.ajax({
+					'async': false,
+					'global': false,
+					'url': 'JSON/newthreads.json',
+					'dataType': "json",
+					'success': function (data) {
+						json = data;
+					}
+				});
+				return json;
+			})();
+			chart1.setDataSource(json);
+		}
+		
+	</script>
+		  
         </div>
       </div>
     </div>
