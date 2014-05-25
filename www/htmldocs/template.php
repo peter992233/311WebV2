@@ -9,8 +9,6 @@
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
     <title>Template Page</title>
-	<!--dbadmin-->
-	<!--notadmin-->
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,6 +36,7 @@
             <li><a href="Dash_Profile.php">Profile</a></li>
 			<li><a href="Dash_Admin_Menu.php">Admin</a></li>
             <li><a href="../index.php?logout">Logout</a></li>
+			<li><a href="template.php">Template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -50,21 +49,17 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-             <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
-            <li><a href="#">Bug Data</a></li>
-            <li><a href="#">Issue Data</a></li>
+            <li class="active"><a href="Dash_Home.php">Overview</a></li>
+		    <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
+            <li><a href="Dash_Bugs_Data.php">Bugs & Issues Data</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Mail Statistics</a></li>
-            <li><a href="">Bug Statistics</a></li>
-            <li><a href="">Issue Statistics</a></li>
-            <li><a href="">Mixed Queries</a></li>
+            <li><a href="Dash_Mail_Stats.php">Mail Statistics</a></li>
+            <li><a href="Dash_Bugs_Stats.php">Bug & Issue Statistics</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Mail Graphs</a></li>
-            <li><a href="">Bug Graphs</a></li>
-            <li><a href="">Issue Graphs</a></li>
+            <li><a href="">Bug & Issue Graphs</a></li>
 			<li><a href="">Mixed Graphs</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
@@ -74,27 +69,31 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard Home</h1>
-
+          
+		<style type="text/css">
+			a.nounderline{
+			text-decoration: none;
+			color: black;
+			}
+		</style>
+		  
+		  <h1 class="page-header">Template Header</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+             
               <h4>Mail</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Bugs</h4>
+              <h4>Bugs & Issues</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Issues</h4>
+              <h4>Add Data</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
+              <h4>Import Data</h4>
               <span class="text-muted">Data Link</span>
             </div>
           </div>
@@ -114,43 +113,7 @@
                   <td>Total Mail Sent</td>
                   <td>1510512</td>
                   <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Total Mail Recieved</td>
-                  <td>660123</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Average Mail Sent Per User</td>
-                  <td>100</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Most Mail Sent</td>
-                  <td>2000</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Bugs Reported</td>
-                  <td>2000</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Bugs Resolved</td>
-                  <td>2000</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Issues Reported</td>
-                  <td>2000</td>
-                  <td>24/05/2014</td>
-                </tr>
-				<tr>
-                  <td>Issues Resolved</td>
-                  <td>2000</td>
-                  <td>24/05/2014</td>
-                </tr>
-                
+                </tr> 
               </tbody>
             </table>
           </div>

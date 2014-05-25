@@ -49,60 +49,48 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="Dash_Home.php">Overview</a></li>
-            <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
-            <li><a href="#">Bug Data</a></li>
-            <li><a href="#">Issue Data</a></li>
+		    <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
+            <li><a href="Dash_Bugs_Data.php">Bugs & Issues Data</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Mail Statistics</a></li>
-            <li><a href="">Bug Statistics</a></li>
-            <li><a href="">Issue Statistics</a></li>
-            <li><a href="">Mixed Queries</a></li>
+            <li><a href="Dash_Mail_Stats.php">Mail Statistics</a></li>
+            <li><a href="Dash_Bugs_Stats.php">Bug & Issue Statistics</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Mail Graphs</a></li>
-            <li><a href="">Bug Graphs</a></li>
-            <li><a href="">Issue Graphs</a></li>
-			<li><a href="">Mixed Graphs</a></li>
+            <li><a href="Dash_Mail_Graphs.php">Mail Graphs</a></li>
+            <li><a href="Dash_Bugs_Graphs.php">Bug & Issue Graphs</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
-            <li><a href="">Python Repository</a></li>
-			<li><a href="">Pull Data</a></li>
-			<li><a href="">Add Data</a></li>
+            <li><a href="http://hg.python.org/">Python Repository</a></li>
+			<li><a href="Dash_Import_Data.php">Import Data</a></li>
+			<li><a href="Dash_Add_Data.php">Add Data</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard Home</h1>
-
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+             
               <h4>Mail</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Bugs</h4>
+              <h4>Bugs & Issues</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Issues</h4>
+              <h4>Add Data</h4>
               <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
+              <h4>Import Data</h4>
               <span class="text-muted">Data Link</span>
             </div>
           </div>
 
           <h2 class="sub-header">Python Development Mail Data</h2>
 		  <?php
-		   $totalsent = 660123;
-		   $totalreceived = 325532;
-		   $AvgSent = 14;
-		   
+		  require_once("../config/getdata.php");
 		  ?>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -117,27 +105,27 @@
                 <tr>
                   <td>Total Mail Sent</td>
                   <td><?php echo $totalsent?></td>
-                  <td>24/05/2014</td>
+                  <td><?php echo $totalsent_date?></td>
                 </tr>
 				<tr>
                   <td>Total Mail Recieved</td>
                   <td><?php echo $totalreceived?></td>
-                  <td>24/05/2014</td>
+                  <td><?php echo $totalreceived_date?></td>
                 </tr>
 				<tr>
                   <td>Average Mail Sent Per User</td>
-                  <td><?php echo $AvgSent = 14?></td>
-                  <td>24/05/2014</td>
+                  <td><?php echo $AvgSent?></td>
+                  <td><?php echo $AvgSent_date?></td>
                 </tr>
 				<tr>
                   <td>Average Mail Received Per User</td>
-                  <td><?php echo $AvgReceived = 5?></td>
-                  <td>24/05/2014</td>
+                  <td><?php echo $AvgReceived?></td>
+                  <td><?php echo $AvgReceived_date?></td>
                 </tr>
 				<tr>
                   <td>Most Mail Sent</td>
                   <td><?php echo $Mostsent = 152?></td>
-                  <td>24/05/2014</td>
+                  <td><?php echo $Mostsent_date?></td>
                 </tr>
               </tbody>
             </table>

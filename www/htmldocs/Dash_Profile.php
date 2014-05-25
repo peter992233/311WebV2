@@ -48,27 +48,22 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview</a></li>
-             <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
-            <li><a href="#">Bug Data</a></li>
-            <li><a href="#">Issue Data</a></li>
+            <li class="active"><a href="Dash_Home.php">Overview</a></li>
+		    <li><a href="Dash_Mail_Data.php">Mail Data</a></li>
+            <li><a href="Dash_Bugs_Data.php">Bugs & Issues Data</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Mail Statistics</a></li>
-            <li><a href="">Bug Statistics</a></li>
-            <li><a href="">Issue Statistics</a></li>
-            <li><a href="">Mixed Queries</a></li>
+            <li><a href="Dash_Mail_Stats.php">Mail Statistics</a></li>
+            <li><a href="Dash_Bugs_Stats.php">Bug & Issue Statistics</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Mail Graphs</a></li>
-            <li><a href="">Bug Graphs</a></li>
-            <li><a href="">Issue Graphs</a></li>
-			<li><a href="">Mixed Graphs</a></li>
+            <li><a href="Dash_Mail_Graphs.php">Mail Graphs</a></li>
+            <li><a href="Dash_Bugs_Graphs.php">Bug & Issue Graphs</a></li>
           </ul>
 		  <ul class="nav nav-sidebar">
-            <li><a href="">Python Repository</a></li>
-			<li><a href="">Pull Data</a></li>
-			<li><a href="">Add Data</a></li>
+            <li><a href="http://hg.python.org/">Python Repository</a></li>
+			<li><a href="Dash_Import_Data.php">Import Data</a></li>
+			<li><a href="Dash_Add_Data.php">Add Data</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

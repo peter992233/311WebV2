@@ -8,9 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Dashboard Home</title>
-	<!--dbadmin-->
-	<!--notadmin-->
+    <title>Bugs Statistics</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -70,7 +68,15 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard Home</h1>
+          
+		<style type="text/css">
+			a.nounderline{
+			text-decoration: none;
+			color: black;
+			}
+		</style>
+		  
+		  <h1 class="page-header">Bug Statistics</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
              
@@ -92,7 +98,6 @@
           </div>
 
           <h2 class="sub-header">Python Development Dashboard Summary</h2>
-		  <?php require_once("../config/getdata.php"); ?>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -105,40 +110,9 @@
               <tbody>
                 <tr>
                   <td>Total Mail Sent</td>
-                  <td><?php echo $totalsent?></td>
-                  <td><?php echo $totalsent_date?></td>
-                </tr>
-				<tr>
-                  <td>Total Mail Recieved</td>
-                  <td><?php echo $totalreceived?></td>
-                  <td><?php echo $totalreceived_date?></td>
-                </tr>
-				<tr>
-                  <td>Average Mail Sent Per User</td>
-                  <td><?php echo $AvgSent?></td>
-                  <td><?php echo $AvgSent_date?></td>
-                </tr>
-				<tr>
-                  <td>Average Mail Received Per User</td>
-                  <td><?php echo $AvgReceived?></td>
-                  <td><?php echo $AvgReceived_date?></td>
-                </tr>
-				<tr>
-                  <td>Most Mail Sent</td>
-                  <td><?php echo $Mostsent?></td>
-                  <td><?php echo $Mostsent_date?></td>
-                </tr>
-				<tr>
-                  <td>Issues Reported</td>
-                  <td><?php echo $total_issues?></td>
-                  <td><?php echo $issues_date?></td>
-                </tr>
-					<tr>
-                  <td>Bugs Resolved</td>
-                  <td><?php echo $total_bugs?></td>
-                  <td><?php echo $bugs_date?></td>
-                </tr>
-                
+                  <td>1510512</td>
+                  <td>24/05/2014</td>
+                </tr> 
               </tbody>
             </table>
           </div>
