@@ -79,7 +79,49 @@
 		  <?php
 		  require_once("../config/getdata.php");
 		  ?>
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>  
+		  <script type="text/javascript">
+			var jarray = [];
+			
+			//Change to ajax request Code:ZZZZ Item: Importing
+			$.getJSON('json/maildata.json', function (json) {
+				var i = 0;    
+				var select = document.getElementById("select_subject");
+				for (var key in json) {
+					if (json.hasOwnProperty(key)) {
+						var item = json[key];
+						jarray.push({
+							Subject: item.Subject,
+							MsgCount: item.MsgCount,
+							Author: item.Author,
+							Date: item.Date});
+							var el = document.createElement("option");
+							el.textContent = item.Subject;
+							el.value = i;
+							select.appendChild(el);
+							i += 1;
+					}
+				}
+			});
+			
+			 $('#select_subject').change(function(){
+				var selector = $('#select_subject option:selected').val();
+				selector = parseInt(selector);
+				$("#user_msg_sent").text(selector);
+				
+				for(var i = 0; i < jarray.length; i++) { 
+						if(selector == i){          
+						$("#subject_display").text("Subject: " + jarray[i].Subject);
+						$("#user_msg_sent").text("Messages Sent: " + jarray[i].MsgCount);
+						$("#mail_author").text("Author: " + jarray[i].Author);
+						$("#mail_date").text("Date: " + jarray[i].Date);
+						}
+					}
+					
+				}
+			);
+		</script>
+		  
 		  <script type="text/javascript">
 				/*  var inStats = [];
 				$.getJSON('json/genstats.json', function (json) {  
@@ -130,6 +172,15 @@
               </tbody>
             </table>
           </div>
+		  
+			<select id="select_subject">
+			<option value="0" >Choose a Subject to Display</option>
+			</select>
+			</h2>
+			<p id="user_msg_sent">Messages Sent: </p>
+			<p id="mail_author">Author: </p>
+			<p id="mail_date">Date: </p>
+		  
 		  
     <!-- Bootstrap core JavaScript
     ================================================== -->
