@@ -1,6 +1,7 @@
 <html><body>
 
 <?php
+	error_reporting(0);
 	if (isset($_GET["id"])){
 	$UID = $_GET["id"];
 	require_once("../config/db.php");

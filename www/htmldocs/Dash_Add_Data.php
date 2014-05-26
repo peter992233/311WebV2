@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Template Page</title>
+    <title>Dashboard Project</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,7 +36,6 @@
             <li><a href="Dash_Profile.php">Profile</a></li>
 			<li><a href="Dash_Admin_Menu.php">Admin</a></li>
             <li><a href="../index.php?logout">Logout</a></li>
-			<li><a href="template.php">Template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -45,7 +44,7 @@
       </div>
     </div>
 
-    <div class="container-fluid">
+   <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
@@ -76,46 +75,25 @@
 			}
 		</style>
 		  
-		  <h1 class="page-header">Template Header</h1>
+		  <h1 class="page-header">Bugs & Issue Graphs</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-             
-              <h4>Mail</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Bugs & Issues</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Add Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Import Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
           </div>
 
-          <h2 class="sub-header">Python Development Dashboard Summary</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Size</th>
-                  <th>Date Updated</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Total Mail Sent</td>
-                  <td>1510512</td>
-                  <td>24/05/2014</td>
-                </tr> 
-              </tbody>
-            </table>
-          </div>
+          <h2 class="sub-header">Add Data</h2>
+          <p>Enter a link for the data you wish to add to the local import</p>
+
+		    <form action="Dash_AddData_Confirm.php">
+				Link(.gz only): <input type="text" name="inputlink"><br>
+				<button>Submit</button>
+			</form>
         </div>
       </div>
     </div>

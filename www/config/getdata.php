@@ -14,7 +14,10 @@
 //		Dash_Mail_Data.php
 //		Dash_Home.php
 
-   $totalsent = 660123;
+   $totalsent = 146154;
+   $totalusers = 2723;
+   $AvgUsers = 53;
+   $MostDedUser = "guido (53)";
    $totalsent_date = "24/05/2014";
    $totalreceived = 325532;
    $totalreceived_date = "24/05/2014";
@@ -28,7 +31,6 @@
    $issues_date = "24/05/2014";
    $total_bugs = 567;
    $bugs_date = "24/05/2014";
-
    
    
    

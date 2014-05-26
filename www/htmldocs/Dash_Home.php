@@ -38,7 +38,6 @@
             <li><a href="Dash_Profile.php">Profile</a></li>
 			<li><a href="Dash_Admin_Menu.php">Admin</a></li>
             <li><a href="../index.php?logout">Logout</a></li>
-			<li><a href="template.php">Template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -74,69 +73,48 @@
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
              
-              <h4>Mail</h4>
-              <span class="text-muted">Data Link</span>
+              <h4><a href="Dash_Mail_Data.php">Mail</a></h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Bugs & Issues</h4>
-              <span class="text-muted">Data Link</span>
+              <h4><a href="Dash_Bugs_Stats.php">Bugs & Issues</a></h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Add Data</h4>
-              <span class="text-muted">Data Link</span>
+              <h4><a href="Dash_Import_Data.php">Import Data</a></h4>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Import Data</h4>
-              <span class="text-muted">Data Link</span>
+              <h4><a href="http://hg.python.org/">Python Repo</a></h4>
             </div>
           </div>
-
           <h2 class="sub-header">Python Development Dashboard Summary</h2>
-		  <?php require_once("../config/getdata.php"); ?>
+		  <?php require_once("../config/getdata.php")?>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Data</th>
                   <th>Size</th>
-                  <th>Date Updated</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Total Mail Sent</td>
                   <td><?php echo $totalsent?></td>
-                  <td><?php echo $totalsent_date?></td>
-                </tr>
-				<tr>
-                  <td>Total Mail Recieved</td>
-                  <td><?php echo $totalreceived?></td>
-                  <td><?php echo $totalreceived_date?></td>
                 </tr>
 				<tr>
                   <td>Average Mail Sent Per User</td>
                   <td><?php echo $AvgSent?></td>
-                  <td><?php echo $AvgSent_date?></td>
                 </tr>
 				<tr>
-                  <td>Average Mail Received Per User</td>
-                  <td><?php echo $AvgReceived?></td>
-                  <td><?php echo $AvgReceived_date?></td>
-                </tr>
-				<tr>
-                  <td>Most Mail Sent</td>
-                  <td><?php echo $Mostsent?></td>
-                  <td><?php echo $Mostsent_date?></td>
+                  <td>Most Dedicated User</td>
+                  <td><?php echo $MostDedUser?></td>
                 </tr>
 				<tr>
                   <td>Issues Reported</td>
                   <td><?php echo $total_issues?></td>
-                  <td><?php echo $issues_date?></td>
                 </tr>
 					<tr>
                   <td>Bugs Resolved</td>
                   <td><?php echo $total_bugs?></td>
-                  <td><?php echo $bugs_date?></td>
                 </tr>
                 
               </tbody>

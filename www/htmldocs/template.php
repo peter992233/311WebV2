@@ -98,25 +98,9 @@
             </div>
           </div>
 
-          <h2 class="sub-header">Python Development Dashboard Summary</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Size</th>
-                  <th>Date Updated</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Total Mail Sent</td>
-                  <td>1510512</td>
-                  <td>24/05/2014</td>
-                </tr> 
-              </tbody>
-            </table>
-          </div>
+          <h2 class="sub-header">Test Section</h2>
+		  
+		  
         </div>
       </div>
     </div>

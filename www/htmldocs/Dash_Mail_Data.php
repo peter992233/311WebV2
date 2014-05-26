@@ -17,7 +17,7 @@
 
   </head>
 
-  <body>
+  <body onload=LoadData()>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
@@ -67,24 +67,11 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard Home</h1>
+          <h1 class="page-header">Mail Data</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
              
-              <h4>Mail</h4>
-              <span class="text-muted">Data Link</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Bugs & Issues</h4>
-              <span class="text-muted">Data Link</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Add Data</h4>
-              <span class="text-muted">Data Link</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Import Data</h4>
-              <span class="text-muted">Data Link</span>
+             
             </div>
           </div>
 
@@ -92,40 +79,53 @@
 		  <?php
 		  require_once("../config/getdata.php");
 		  ?>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		  <script type="text/javascript">
+				/*  var inStats = [];
+				$.getJSON('json/genstats.json', function (json) {  
+					for (var key in json) {
+						if (json.hasOwnProperty(key)) {
+							var inStats = json[key];
+							tarray.push({
+								Total_Messages: item.Total_Messages,
+								Total_number_of_Users: item.Total_number_of_Users,
+								Average_Messages: item.Average_Messages,
+								Most_Dedicated_User: item.Most_Dedicated_User});
+						}
+					}
+				});
+				*/
+		function LoadData(){
+			$("#Mail_TotMsg").text("146154");
+			$("#Mail_TotUsers").text("2723");
+			$("#Mail_AvgUsers").text("53");
+			$("#Mail_MostDedUser").text("guido (53)");
+			};
+		  </script>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Data</th>
                   <th>Size</th>
-                  <th>Date Updated</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Total Mail Sent</td>
-                  <td><?php echo $totalsent?></td>
-                  <td><?php echo $totalsent_date?></td>
+                  <td id="Mail_TotMsg"></td>
                 </tr>
 				<tr>
-                  <td>Total Mail Recieved</td>
-                  <td><?php echo $totalreceived?></td>
-                  <td><?php echo $totalreceived_date?></td>
+                  <td>Number Of Users</td>
+                  <td id="Mail_TotUsers"></td>
                 </tr>
 				<tr>
                   <td>Average Mail Sent Per User</td>
-                  <td><?php echo $AvgSent?></td>
-                  <td><?php echo $AvgSent_date?></td>
-                </tr>
-				<tr>
-                  <td>Average Mail Received Per User</td>
-                  <td><?php echo $AvgReceived?></td>
-                  <td><?php echo $AvgReceived_date?></td>
+                  <td id="Mail_AvgUsers"></td>
                 </tr>
 				<tr>
                   <td>Most Mail Sent</td>
-                  <td><?php echo $Mostsent = 152?></td>
-                  <td><?php echo $Mostsent_date?></td>
+                  <td id="Mail_MostDedUser"></td>
                 </tr>
               </tbody>
             </table>
@@ -134,7 +134,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
   </body>

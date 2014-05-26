@@ -36,7 +36,6 @@
             <li><a href="Dash_Profile.php">Profile</a></li>
 			<li><a href="Dash_Admin_Menu.php">Admin</a></li>
             <li><a href="../index.php?logout">Logout</a></li>
-			<li><a href="template.php">Template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -79,25 +78,16 @@
 		  <h1 class="page-header">Mail Statistics</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-             
-              <h4>Mail</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Bugs & Issues</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Add Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Import Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
           </div>
 
-          <h2 class="sub-header">Python Development Dashboard Summary</h2>
+          <h2 class="sub-header">Python Development Mail Statistics</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

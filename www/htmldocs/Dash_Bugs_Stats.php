@@ -19,7 +19,7 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,7 +36,6 @@
             <li><a href="Dash_Profile.php">Profile</a></li>
 			<li><a href="Dash_Admin_Menu.php">Admin</a></li>
             <li><a href="../index.php?logout">Logout</a></li>
-			<li><a href="template.php">Template</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -79,24 +78,18 @@
 		  <h1 class="page-header">Bug Statistics</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-             
-              <h4>Mail</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Bugs & Issues</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Add Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <h4>Import Data</h4>
-              <span class="text-muted">Data Link</span>
             </div>
           </div>
-
+			
+		<?php
+		  require_once("../config/getdata.php");
+		?>
           <h2 class="sub-header">Python Development Dashboard Summary</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -107,13 +100,17 @@
                   <th>Date Updated</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Total Mail Sent</td>
-                  <td>1510512</td>
-                  <td>24/05/2014</td>
-                </tr> 
-              </tbody>
+               <tbody>
+              	<tr>
+                  <td>Issues Reported</td>
+                  <td><?php echo $total_issues?></td>
+                  <td><?php echo $issues_date?></td>
+                </tr>
+					<tr>
+                  <td>Bugs Resolved</td>
+                  <td><?php echo $total_bugs?></td>
+                  <td><?php echo $bugs_date?></td>
+                </tr>
             </table>
           </div>
         </div>
