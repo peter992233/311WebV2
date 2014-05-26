@@ -95,11 +95,22 @@
 			google.setOnLoadCallback(drawChart);
 			function drawChart() {
 				var data = google.visualization.arrayToDataTable([
-				  ['Year', 'Sent', 'Recieved'],
-				  ['1999',  1000,      400],
-				  ['2000',  1170,      460],
+				  ['Year', 'Recieved', 'Sent'],
+				  ['1999',  258,      194],
+				  ['2000',  823,      642],
 				  ['2001',  660,       1120],
-				  ['2002',  1030,      540]
+				  ['2002',  1030,      740],
+				  ['2003',  258,      189],
+				  ['2004',  785,      460],
+				  ['2005',  660,       1120],
+				  ['2006',  1030,      540],
+				  ['2007',  258,      400],
+				  ['2008',  914,      460],
+				  ['2009',  660,       1120],
+				  ['2010',  1030,      540],
+				  ['2011',  1030,      540],
+				  ['2012',  952,      589],
+				  ['2013',  924,      742]
 				]);
 
 				var options = {
@@ -110,30 +121,8 @@
 				var chart = new google.visualization.ColumnChart(document.getElementById('mail_over_time_chart'));
 				chart.draw(data, options);
 			  }
-			  
-			  
-			google.load("visualization", "1", {packages:["corechart"]});
-			google.setOnLoadCallback(drawChart2);
-			function drawChart2() {
-				var data2 = google.visualization.arrayToDataTable([
-				  ['Year', 'Sent', 'Recieved'],
-				  ['1999',  1111,      400],
-				  ['2000',  1170,      460],
-				  ['2001',  660,       1120],
-				  ['2002',  1030,      540]
-				]);
-
-				var options2 = {
-				  title: 'Average Sent/Recieved By Year',
-				  hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
-				};
-
-				var chart2 = new google.visualization.ColumnChart(document.getElementById('avg_over_time_chart'));
-				chart2.draw(data2, options2);
-			  }
 			</script>
 			<div id="mail_over_time_chart" style="width: 900px; height: 500px;"></div>
-			<div id="avg_over_time_chart" style="width: 900px; height: 500px;"></div>
 		  </div>
 		    <!--==================Pre Scripts For Query Wrapper==================-->  
 		<!--Load the AJAX API-->
